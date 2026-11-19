@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Chiến Lược Vĩ Mô 2026 – Triển Vọng Đầu Tư 2027</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              900: '#070F1E',
+              800: '#0B192C',
+              700: '#1E2E45',
+              600: '#2A3F5D',
+            },
+            cyan: {
+              accent: '#00E5FF',
+              glow: 'rgba(0, 229, 255, 0.15)',
+            },
+            emerald: {
+              accent: '#00E676',
+            },
+            gold: {
+              accent: '#FFD700',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles for Glowing Effects and Print Adjustments -->
+  <style>
+    body {
+      background-color: #070F1E;
+      color: #E2E8F0;
+    }
+    .glass-card {
+      background: rgba(11, 25, 44, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+    }
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #00E5FF 0%, #00E676 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #FFD700 0%, #FF9100 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-cyan-btn {
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+    }
+    .glow-cyan-btn:hover {
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.7);
+    }
+    /* Hide scrollbar for clean UI */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @media print {
+      body { background-color: #ffffff !important; color: #000000 !important; }
+      nav, .no-print { display: none !important; }
+      .glass-card { background: #ffffff !important; border: 1px solid #ccc !important; color: #000 !important; box-shadow: none !important; }
+      h1, h2, h3, h4, p, span { color: #000000 !important; -webkit-text-fill-color: initial !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased selection:bg-cyan-accent selection:text-navy-900">
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 bg-navy-900/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand / Logo -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-accent to-emerald-accent flex items-center justify-center text-navy-900 font-extrabold text-xl shadow-lg shadow-cyan-accent/20">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div>
+            <span class="text-lg font-bold tracking-tight text-white block">MINH<span class="text-cyan-accent">TRANG</span></span>
+            <span class="text-[10px] text-slate-400 font-medium tracking-widest uppercase block">STRATEGY 2026 – 2027</span>
+          </div>
+        </div>
+
+        <!-- Desktop Menu Links -->
+        <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <a href="#overview" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-accent hover:bg-navy-800 transition-all">1. Tổng Quan</a>
+          <a href="#world-macro" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-accent hover:bg-navy-800 transition-all">2. Thế Giới</a>
+          <a href="#domestic-macro" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-accent hover:bg-navy-800 transition-all">3. Trong Nước</a>
+          <a href="#risk-margin" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-accent hover:bg-navy-800 transition-all">4. Rủi Ro & Margin</a>
+          <a href="#beneficiary-sectors" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-accent hover:bg-navy-800 transition-all">5. Danh Mục Ngành</a>
+        </div>
+
+        <!-- Action Controls -->
+        <div class="hidden md:flex items-center space-x-3">
+          <button onclick="window.print()" class="no-print px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-cyan-accent border border-cyan-accent/30 hover:bg-cyan-accent/10 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-print"></i> Xuất Báo Cáo
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-navy-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+      <a href="#overview" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-accent">1. Tổng Quan KPI</a>
+      <a href="#world-macro" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-accent">2. Bối Cảnh Thế Giới</a>
+      <a href="#domestic-macro" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-accent">3. Kinh Tế Trong Nước</a>
+      <a href="#risk-margin" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-accent">4. Áp Lực Margin & Khối Ngoại</a>
+      <a href="#beneficiary-sectors" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-accent">5. Ngành Hưởng Lợi & Mã CP</a>
+      <button onclick="window.print()" class="w-full mt-4 px-4 py-2 rounded-lg text-xs font-semibold uppercase text-cyan-accent border border-cyan-accent/30 bg-cyan-accent/10 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-file-pdf"></i> Tải Bản In PDF
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO HEADER & HIGHLIGHT KPIS ==================== -->
+  <header id="overview" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div class="text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-glow border border-cyan-accent/30 text-cyan-accent text-xs font-bold uppercase tracking-widest mb-6">
+        <span class="w-2 h-2 rounded-full bg-cyan-accent animate-ping"></span>
+        Báo Cáo Phân Tích Chiến Lược Đầu Tư Thường Niên
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+        BỐI CẢNH 2026 – TRIỂN VỌNG <span class="gradient-text-cyan">2027</span>
+      </h1>
+      
+      <p class="text-base sm:text-xl text-slate-300 font-normal leading-relaxed mb-10">
+        Đánh giá tác động đa chiều từ chi phí vốn quốc tế, biến động dòng tiền ngoại tệ đến tốc độ thực thi chính sách tài khóa trong nước và danh mục ngành đón đầu sóng tăng trưởng 2027.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 no-print">
+        <a href="#beneficiary-sectors" class="px-6 py-3.5 rounded-xl font-bold text-navy-900 bg-gradient-to-r from-cyan-accent to-emerald-accent glow-cyan-btn transition-all duration-300 flex items-center gap-2 text-sm">
+          <i class="fa-solid fa-list-check"></i> Khám Phá Mã Cổ Phiếu Top Pick
+        </a>
+        <a href="#risk-margin" class="px-6 py-3.5 rounded-xl font-bold text-white bg-navy-800 border border-slate-700 hover:border-slate-500 transition-all duration-300 flex items-center gap-2 text-sm">
+          <i class="fa-solid fa-triangle-exclamation text-gold-accent"></i> Đánh Giá Rủi Ro Margin
+        </a>
+      </div>
+    </div>
+
+    <!-- KPI Summary Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-16">
+      
+      <!-- KPI 1 -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 relative overflow-hidden group">
+        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-cyan-accent/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Giải Ngân Đầu Tư Công (10T)</span>
+          <div class="w-9 h-9 rounded-lg bg-cyan-accent/10 border border-cyan-accent/20 flex items-center justify-center text-cyan-accent">
+            <i class="fa-solid fa-road"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-white mb-1">783.9 <span class="text-base font-normal text-slate-400">nghìn tỷ</span></div>
+        <div class="flex items-center text-xs text-emerald-accent font-semibold gap-1">
+          <i class="fa-solid fa-arrow-trend-up"></i> +19,8% YoY <span class="text-slate-400 font-normal ml-1">(Đạt 69.0% Kế hoạch)</span>
+        </div>
+      </div>
+
+      <!-- KPI 2 -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 relative overflow-hidden group">
+        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-accent/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">FDI Thực Hiện (10T/2026)</span>
+          <div class="w-9 h-9 rounded-lg bg-emerald-accent/10 border border-emerald-accent/20 flex items-center justify-center text-emerald-accent">
+            <i class="fa-solid fa-building-flag"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-white mb-1">24.08 <span class="text-base font-normal text-slate-400">tỷ USD</span></div>
+        <div class="flex items-center text-xs text-emerald-accent font-semibold gap-1">
+          <i class="fa-solid fa-arrow-trend-up"></i> +13,1% YoY <span class="text-slate-400 font-normal ml-1">(Đăng ký: 54.85 tỷ $)</span>
+        </div>
+      </div>
+
+      <!-- KPI 3 -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 relative overflow-hidden group">
+        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-gold-accent/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">CPI Tháng 10/2026</span>
+          <div class="w-9 h-9 rounded-lg bg-gold-accent/10 border border-gold-accent/20 flex items-center justify-center text-gold-accent">
+            <i class="fa-solid fa-arrow-up-right-dots"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-white mb-1">5.09% <span class="text-base font-normal text-slate-400">YoY</span></div>
+        <div class="flex items-center text-xs text-gold-accent font-semibold gap-1">
+          <i class="fa-solid fa-triangle-exclamation"></i> CPI 10T: +4.57% <span class="text-slate-400 font-normal ml-1">(Tốc độ tăng cao)</span>
+        </div>
+      </div>
+
+      <!-- KPI 4 -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 relative overflow-hidden group">
+        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-rose-500/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Dư Nợ Margin Q3/2026</span>
+          <div class="w-9 h-9 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-white mb-1">457.5 <span class="text-base font-normal text-slate-400">nghìn tỷ</span></div>
+        <div class="flex items-center text-xs text-rose-400 font-semibold gap-1">
+          <i class="fa-solid fa-shield-cat"></i> Hấp thụ ~88% <span class="text-slate-400 font-normal ml-1">lượng ngoại bán</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== SECTION I: VĨ MÔ THẾ GIỚI ==================== -->
+  <section id="world-macro" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/60">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-accent block mb-2">PHẦN I</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">THẾ GIỚI: CHI PHÍ VỐN & XU HƯỚNG DÒNG TIỀN</h2>
+      </div>
+      <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+        Các lực lượng kinh tế bên ngoài tác động trực tiếp lên khẩu vị rủi ro, áp lực tỷ giá USD/VND và dư địa lãi suất nội địa.
+      </p>
+    </div>
+
+    <!-- Grid 4 Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Card 1: Lạm phát -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent font-bold text-lg">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-white">Lạm Phát Mỹ & Áp Lực Giá Core</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            CPI tháng 10 của Mỹ tăng <span class="text-white font-semibold">0,4% MoM</span> (giảm nhẹ so với 0,6% trong tháng 9). Tuy nhiên, <span class="text-gold-accent font-semibold">CPI lõi tiếp tục tăng 0,3% tháng thứ ba liên tiếp</span>; chi phí năng lượng phục hồi +0,7%. Áp lực lạm phát cơ bản chưa hạ nhiệt rõ rệt.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800">
+          <button onclick="openModal('note-inflation')" class="text-xs font-semibold text-cyan-accent hover:text-white flex items-center gap-1.5 transition-colors">
+            <i class="fa-solid fa-lightbulb"></i> Xem lưu ý chiến lược lạm phát <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Lãi suất Fed -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent font-bold text-lg">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-white">Kịch Bản Lãi Suất Fed 2026 – 2027</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-3">
+            Thị trường tương lai (Futures 17/11) đặt cược <span class="text-emerald-accent font-bold">98% xác suất Fed tăng 0.25%</span> tại họp 8–9/12/2026, nâng vùng lãi suất mục tiêu lên <span class="text-white font-semibold">4.00 – 4.25%</span>.
+          </p>
+          <div class="bg-navy-900/60 p-3.5 rounded-xl border border-slate-800 mb-2">
+            <p class="text-xs text-slate-300">
+              <strong class="text-gold-accent">Dự báo T3/2027:</strong> Goldman Sachs & U.S. Bank cảnh báo Fed có thể tăng tiếp 0,25% nếu lạm phát duy trì dai dẳng trước mùa xuân.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800">
+          <button onclick="openModal('note-fed')" class="text-xs font-semibold text-cyan-accent hover:text-white flex items-center gap-1.5 transition-colors">
+            <i class="fa-solid fa-lightbulb"></i> Xem lưu ý tác động tới tỷ giá & vốn vay <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Dòng tiền & Tỷ giá -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent font-bold text-lg">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-white">Dòng Vốn Quốc Tế Rút Về Mỹ</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Lợi suất USD duy trì độ hấp dẫn cao thúc đẩy việc cơ cấu vốn toàn cầu, gia tăng tỷ trọng tài sản USD và thắt chặt tiêu chuẩn với các thị trường mới nổi. Việt Nam chịu áp lực gián tiếp qua bán ròng của khối ngoại & biến động tỷ giá USD/VND.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800">
+          <button onclick="openModal('note-capital')" class="text-xs font-semibold text-cyan-accent hover:text-white flex items-center gap-1.5 transition-colors">
+            <i class="fa-solid fa-lightbulb"></i> Đánh giá sức hấp thụ dòng tiền nội địa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: Bong bóng AI -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent font-bold text-lg">
+                4
+              </div>
+              <h3 class="text-xl font-bold text-white">Đầu Tư AI & Rủi Ro CapEx</h3>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">High CapEx</span>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-3">
+            Top 4 Hyperscalers dự kiến chi <span class="text-cyan-accent font-bold">730 tỷ USD</span> CapEx năm 2026 (tăng vọt từ 410 tỷ USD năm 2025) vào Chip GPU, Data Center & Nguồn Điện.
+          </p>
+          <div class="text-xs text-slate-400 bg-navy-900/60 p-3 rounded-xl border border-slate-800">
+            Khảo sát BofA: Tỷ lệ Quỹ Overweight Công nghệ giảm từ <span class="text-rose-400 font-semibold">37% → 12%</span>. <span class="text-white font-semibold">52% nhà quản lý</span> dự báo cắt giảm CapEx trong 6 tháng tới.
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800">
+          <button onclick="openModal('note-ai')" class="text-xs font-semibold text-cyan-accent hover:text-white flex items-center gap-1.5 transition-colors">
+            <i class="fa-solid fa-lightbulb"></i> Phân biệt chu kỳ AI vs Định giá cổ phiếu <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION II: KINH TẾ TRONG NƯỚC ==================== -->
+  <section id="domestic-macro" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/60">
+    <div class="mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-accent block mb-2">PHẦN II</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">KINH TẾ TRONG NƯỚC: TĂNG TRƯỞNG & DÒNG VỐN</h2>
+      <p class="text-slate-400 text-sm mt-2">Động lực tăng trưởng tích cực từ Đầu tư công và FDI thực hiện, đi kèm thách thức mặt bằng lãi suất tín dụng.</p>
+    </div>
+
+    <!-- Grid Layout with Visual Charts & Dynamic Metrics -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      
+      <!-- Panel 1: Lãi suất & Tín dụng -->
+      <div class="glass-card rounded-2xl p-6 lg:col-span-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-accent/10 border border-emerald-accent/30 flex items-center justify-center text-emerald-accent text-lg">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Tín Dụng vs Huy Động</h3>
+              <p class="text-xs text-slate-400">Số liệu cập nhật 30/9/2026</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-slate-300">Tín Dụng Toàn Hệ Thống</span>
+                <span class="text-cyan-accent">+11.59%</span>
+              </div>
+              <div class="w-full bg-navy-900 rounded-full h-3 border border-slate-800">
+                <div class="bg-gradient-to-r from-cyan-accent to-blue-500 h-2.5 rounded-full" style="width: 77%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-slate-300">Huy Động Vốn</span>
+                <span class="text-emerald-accent">+10.60%</span>
+              </div>
+              <div class="w-full bg-navy-900 rounded-full h-3 border border-slate-800">
+                <div class="bg-gradient-to-r from-emerald-accent to-teal-500 h-2.5 rounded-full" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-navy-900/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+            <p><i class="fa-solid fa-circle-notch text-gold-accent mr-1"></i> Tín dụng tăng nhanh hơn huy động tạo áp lực lên thanh khoản tiền gửi kỳ hạn dài cuối năm.</p>
+            <p><i class="fa-solid fa-circle-notch text-gold-accent mr-1"></i> CPI bình quân 10T tăng 4,57% hạn chế khả năng giảm sâu lãi suất cho vay.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <button onclick="openModal('note-domestic-rate')" class="text-xs font-semibold text-emerald-accent hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-circle-info"></i> Tác động đến DN BĐS & Đòn Bẩy <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel 2 & 3: Đầu tư công & FDI Status Cards -->
+      <div class="glass-card rounded-2xl p-6 lg:col-span-2 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-chart-simple text-cyan-accent"></i> Giải Ngân Đầu Tư Công & FDI 10 Tháng 2026
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            
+            <!-- Item A: Đầu tư công -->
+            <div class="bg-navy-900/80 p-5 rounded-xl border border-slate-800">
+              <span class="text-xs font-bold text-cyan-accent uppercase tracking-wider block mb-1">ĐẦU TƯ CÔNG</span>
+              <div class="text-2xl font-extrabold text-white mb-1">783.9 <span class="text-xs font-normal text-slate-400">nghìn tỷ VNĐ</span></div>
+              <p class="text-xs text-slate-300 mb-3">+19,8% so với cùng kỳ | Đạt 69% kế hoạch năm</p>
+              
+              <!-- Progress bar -->
+              <div class="w-full bg-slate-800 rounded-full h-2 mb-2">
+                <div class="bg-cyan-accent h-2 rounded-full" style="width: 69%"></div>
+              </div>
+              <span class="text-[11px] text-amber-300 font-medium block">
+                <i class="fa-solid fa-clock"></i> Còn 31% kế hoạch cần giải ngân trong 2 tháng cuối
+              </span>
+            </div>
+
+            <!-- Item B: FDI -->
+            <div class="bg-navy-900/80 p-5 rounded-xl border border-slate-800">
+              <span class="text-xs font-bold text-emerald-accent uppercase tracking-wider block mb-1">FDI THỰC HIỆN VS ĐĂNG KÝ</span>
+              <div class="text-2xl font-extrabold text-white mb-1">24.08 <span class="text-xs font-normal text-slate-400">tỷ USD (Thực hiện)</span></div>
+              <p class="text-xs text-slate-300 mb-3">+13.1% YoY | Vốn đăng ký: 54.85 tỷ USD (+74%)</p>
+              
+              <div class="w-full bg-slate-800 rounded-full h-2 mb-2">
+                <div class="bg-emerald-accent h-2 rounded-full" style="width: 44%"></div>
+              </div>
+              <span class="text-[11px] text-emerald-400 font-medium block">
+                <i class="fa-solid fa-industry"></i> Chế biến - chế tạo tiếp tục thu hút vốn lớn nhất
+              </span>
+            </div>
+
+          </div>
+
+          <p class="text-xs text-slate-400 leading-relaxed bg-navy-800/50 p-3.5 rounded-xl border border-slate-700/50">
+            <strong class="text-white">Ghi chú chiến lược:</strong> Cơ hội năm 2027 lan tỏa từ các dự án giao thông trọng điểm, kết nối KCN - cảng biển. Ưu tiên theo dõi vốn FDI thực hiện thực tế hơn vốn đăng ký phê duyệt.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between items-center">
+          <button onclick="openModal('note-dtc')" class="text-xs font-semibold text-cyan-accent hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-shield"></i> Tiêu chí chọn doanh nghiệp Xây dựng/Vật liệu <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION III: RỦI RO MARGIN VS KHỐI NGOẠI ==================== -->
+  <section id="risk-margin" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/60">
+    <div class="mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-rose-400 block mb-2">PHẦN TƯƠNG TÁC</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">TƯƠNG QUAN KHỐI NGOẠI BÁN RÒNG VS DƯ NỢ MARGIN</h2>
+      <p class="text-slate-400 text-sm mt-2">Dòng tiền nội đòn bẩy đóng vai trò hấp thụ nguồn cung ngoại, nhưng làm tăng độ nhạy cảm của thị trường.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Chart Canvas Container -->
+      <div class="lg:col-span-7 glass-card p-6 rounded-2xl border border-slate-800">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-cyan-accent"></i> Quy Mô Khối Ngoại Bán Ròng & Margin (Nghìn Tỷ VNĐ)
+          </h3>
+          <span class="text-[11px] bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-mono">2021 - Q3/2026</span>
+        </div>
+        
+        <div class="relative h-72 sm:h-80 w-full">
+          <canvas id="marginForeignChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Detail Explanations -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <div class="glass-card p-5 rounded-xl border-l-4 border-l-rose-500">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-sm font-bold text-white">Khối Ngoại Bán Ròng Lũy Kế</h4>
+            <span class="text-xs font-mono font-bold text-rose-400">~393 NGHÌN TỶ</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Từ 2021 đến giữa T11/2026. Riêng 10T/2026 bán ròng ~121,9 nghìn tỷ VNĐ (Tháng 10 bán 23,7 nghìn tỷ).
+          </p>
+        </div>
+
+        <div class="glass-card p-5 rounded-xl border-l-4 border-l-emerald-accent">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-sm font-bold text-white">Mức Tăng Dư Nợ Margin</h4>
+            <span class="text-xs font-mono font-bold text-emerald-accent">+347,5 NGHÌN TỶ</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Dư nợ tăng từ 110 nghìn tỷ (Q1/2021) lên 457,5 nghìn tỷ (Q3/2026), tương đương <strong class="text-white">hấp thụ ~88%</strong> quy mô bán ròng của ngoại.
+          </p>
+        </div>
+
+        <div class="bg-rose-950/30 border border-rose-500/30 p-5 rounded-xl">
+          <h4 class="text-sm font-bold text-rose-300 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation"></i> CẢNH BÁO RỦI RO THEO DÕI
+          </h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Margin tăng mạnh khi thanh khoản thị trường chưa phục hồi tương ứng. Nếu giá cổ phiếu giảm đột ngột, áp lực bán giải chấp (Call Margin) có thể lan rộng nếu dòng tiền mặt nội địa không hấp thụ kịp.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION IV: NGÀNH HƯỞNG LỢI & DANH MỤC CỔ PHIẾU ==================== -->
+  <section id="beneficiary-sectors" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/60">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-accent block mb-2">PHẦN III</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">NGÀNH HƯỞNG LỢI & DANH MỤC THEO DÕI 2027</h2>
+        <p class="text-slate-400 text-sm mt-1">Ưu tiên những doanh nghiệp có đơn hàng được xác nhận và khả năng chuyển hóa thành lợi nhuận thực tế.</p>
+      </div>
+
+      <!-- Sector Filter Buttons -->
+      <div class="flex flex-wrap gap-2 mt-6 md:mt-0 no-scrollbar overflow-x-auto pb-2">
+        <button onclick="filterSector('all')" class="sector-btn active px-4 py-2 rounded-xl text-xs font-bold bg-cyan-accent text-navy-900 transition-all">
+          Tất Cả Ngành
+        </button>
+        <button onclick="filterSector('dtc')" class="sector-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
+          Đầu Tư Công & VLXD
+        </button>
+        <button onclick="filterSector('logistics')" class="sector-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
+          Cảng Biển & Vận Tải
+        </button>
+        <button onclick="filterSector('power')" class="sector-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
+          Điện & Thiết Bị
+        </button>
+        <button onclick="filterSector('iz')" class="sector-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
+          BĐS Khu Công Nghiệp
+        </button>
+      </div>
+    </div>
+
+    <!-- Stock Cards Grid -->
+    <div id="stock-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card: VCG -->
+      <div class="stock-card dtc glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">XÂY DỰNG HẠ TẦNG</span>
+              <h3 class="text-2xl font-extrabold text-white">VCG <span class="text-xs font-normal text-slate-400">Vinaconex</span></h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-cyan-accent/10 border border-cyan-accent/30 text-cyan-accent font-mono text-xs font-bold">TOP PICK</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Hưởng lợi trực tiếp từ các gói thầu cao tốc và hạ tầng giao thông lớn chuyển tiếp khối lượng thi công sang 2027.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Backlog thi công lớn</strong></span>
+          <i class="fa-solid fa-arrow-trend-up text-emerald-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: CTD -->
+      <div class="stock-card dtc glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">XÂY DỰNG DÂN DỤNG & CN</span>
+              <h3 class="text-2xl font-extrabold text-white">CTD <span class="text-xs font-normal text-slate-400">Cotecons</span></h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-cyan-accent/10 border border-cyan-accent/30 text-cyan-accent font-mono text-xs font-bold">TOP PICK</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Vị thế số 1 xây dựng công nghiệp FDI, dòng tiền hoạt động lành mạnh và năng lực thi công dự án quy mô lớn.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Trúng thầu nhà máy FDI</strong></span>
+          <i class="fa-solid fa-arrow-trend-up text-emerald-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: HPG -->
+      <div class="stock-card dtc glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">VẬT LIỆU - THÉP</span>
+              <h3 class="text-2xl font-extrabold text-white">HPG <span class="text-xs font-normal text-slate-400">Hòa Phát</span></h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-emerald-accent/10 border border-emerald-accent/30 text-emerald-accent font-mono text-xs font-bold">LEADER</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Cung cấp sản lượng thép xây dựng chính cho dự án đầu tư công; dự án Dung Quất 2 tối ưu quy mô chi phí.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Dung Quất 2 & ĐTC</strong></span>
+          <i class="fa-solid fa-arrow-trend-up text-emerald-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: KSB & DHA -->
+      <div class="stock-card dtc glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">VẬT LIỆU - ĐÁ XÂY DỰNG</span>
+              <h3 class="text-2xl font-extrabold text-white">KSB | DHA</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono text-xs font-bold">KHU VỰC PHÍA NAM</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Sở hữu mỏ đá vị trí thuận lợi gần các đại dự án Sân bay Long Thành và mạng lưới đường cao tốc phía Nam.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Lợi thế: <strong class="text-white">Mỏ đá biên lợi nhuận cao</strong></span>
+          <i class="fa-solid fa-gem text-cyan-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: NTP & BMP -->
+      <div class="stock-card dtc glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">VẬT LIỆU - NHỰA XÂY DỰNG</span>
+              <h3 class="text-2xl font-extrabold text-white">NTP | BMP</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-emerald-accent/10 border border-emerald-accent/30 text-emerald-accent font-mono text-xs font-bold">CỔ TỨC CAO</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Dòng tiền kinh doanh vững chắc, hưởng lợi từ giá hạt nhựa đầu vào ổn định và nhu cầu đường ống hạ tầng.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Lợi thế: <strong class="text-white">Tiền mặt ròng cao</strong></span>
+          <i class="fa-solid fa-coins text-gold-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: GMD -->
+      <div class="stock-card logistics glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">CẢNG BIỂN</span>
+              <h3 class="text-2xl font-extrabold text-white">GMD <span class="text-xs font-normal text-slate-400">Gemadept</span></h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-cyan-accent/10 border border-cyan-accent/30 text-cyan-accent font-mono text-xs font-bold">CẢNG BIỂN #1</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Sản lượng TEU 10T/2026 vượt 24.4 triệu (+9.2%). Cảng Nam Đình Vũ & Gemalink duy trì công suất khai thác cao.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Tăng trưởng sản lượng TEU</strong></span>
+          <i class="fa-solid fa-anchor text-cyan-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: HAH -->
+      <div class="stock-card logistics glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">VẬN TẢI BIỂN CONTAINER</span>
+              <h3 class="text-2xl font-extrabold text-white">HAH <span class="text-xs font-normal text-slate-400">Hải An</span></h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono text-xs font-bold">MỞ RỘNG ĐỘI TÀU</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Gia tăng công suất đội tàu và ký hợp đồng cho thuê tàu giá tốt; lưu ý biến động giá cước & giá nhiên liệu.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Tuyến nội địa & Đông Bắc Á</strong></span>
+          <i class="fa-solid fa-ship text-cyan-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: REE & TV2 -->
+      <div class="stock-card power glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">ĐIỆN & THIẾT BỊ LƯỚI ĐIỆN</span>
+              <h3 class="text-2xl font-extrabold text-white">REE | TV2</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">EVNNPT 33.7T</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            EVNNPT kế hoạch chi 33,7 nghìn tỷ năm 2027 (khởi công 52 & đóng điện 54 dự án). TV2 & REE hưởng lợi tư vấn, cơ điện và truyền tải.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Quy hoạch Điện VIII & Lưới truyền tải</strong></span>
+          <i class="fa-solid fa-bolt text-gold-accent"></i>
+        </div>
+      </div>
+
+      <!-- Card: IDC, SIP, SZC -->
+      <div class="stock-card iz glass-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-cyan-accent uppercase tracking-wider block">BẤT ĐỘNG SẢN KHU CÔNG NGHIỆP</span>
+              <h3 class="text-2xl font-extrabold text-white">IDC | SIP | SZC</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-emerald-accent/10 border border-emerald-accent/30 text-emerald-accent font-mono text-xs font-bold">FDI THỰC HIỆN</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Tỷ lệ lấp đầy nhà xưởng xây sẵn đạt 91,4% và đất KCN đạt 75.8% tại miền Nam. Ưu tiên DN có sẵn quỹ đất sạch bàn giao 2027.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+          <span class="text-slate-400">Động lực: <strong class="text-white">Dòng vốn FDI chế biến chế tạo</strong></span>
+          <i class="fa-solid fa-warehouse text-emerald-accent"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER & DISCLAIMER ==================== -->
+  <footer class="bg-navy-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-cyan-accent flex items-center justify-center text-navy-900 font-bold">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <span class="text-sm font-bold text-white tracking-wider">MINH<span class="text-cyan-accent">TRANG SSI</span> RESEARCH</span>
+      </div>
+
+      <p class="text-xs text-slate-400 text-center md:text-left max-w-2xl leading-relaxed">
+        <strong>Miễn trừ trách nhiệm:</strong> Báo cáo được tổng hợp dựa trên số liệu kinh tế vĩ mô công khai tính đến tháng 11/2026. Các thông tin và nhận định mang tính chất tham khảo cho quyết định đầu tư, không phải là lời mời chào mua bán chứng khoán trực tiếp.
+      </p>
+
+      <div class="text-xs text-slate-400">
+        © 2026 Minh Trang. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL CHI TIẾT LƯU Ý RỦI RO ==================== -->
+  <div id="info-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-navy-900/80 backdrop-blur-sm">
+    <div class="glass-card bg-navy-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div id="modal-icon" class="w-10 h-10 rounded-xl bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent">
+          <i class="fa-solid fa-lightbulb text-lg"></i>
+        </div>
+        <h3 id="modal-title" class="text-lg font-bold text-white">Lưu Ý Chiến Lược</h3>
+      </div>
+
+      <div id="modal-body" class="text-sm text-slate-300 leading-relaxed space-y-3">
+        <!-- Content inserted dynamically -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+        <button onclick="closeModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-navy-800 hover:bg-slate-700 text-white border border-slate-600 transition-all">
+          Đóng cửa sổ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // --- 1. Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // --- 2. Sector Filter Logic ---
+    function filterSector(sector) {
+      const cards = document.querySelectorAll('.stock-card');
+      const buttons = document.querySelectorAll('.sector-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-cyan-accent', 'text-navy-900');
+        btn.classList.add('bg-navy-800', 'text-slate-300');
+      });
+
+      // Highlight active button
+      event.target.classList.remove('bg-navy-800', 'text-slate-300');
+      event.target.classList.add('bg-cyan-accent', 'text-navy-900');
+
+      cards.forEach(card => {
+        if (sector === 'all' || card.classList.contains(sector)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // --- 3. Interactive Modal Content Dictionary ---
+    const modalData = {
+      'note-inflation': {
+        title: "Lưu Ý Về Lạm Phát & Lãi Suất",
+        icon: "fa-solid fa-fire-flame-curved text-gold-accent",
+        content: `
+          <p>Lạm phát cao khiến mặt bằng lãi suất khó giảm nhanh. Nếu giá năng lượng, chi phí vận tải đường biển hoặc nguyên liệu thô tiếp tục duy trì đà tăng, chi phí đầu vào của doanh nghiệp và áp lực lãi suất cao có thể kéo dài sang hết Q1/2027.</p>
+          <p><strong>Khuyến nghị:</strong> Hạn chế phân bổ trọng số lớn vào các doanh nghiệp phụ thuộc nhiều vào nguyên liệu đầu vào nhập khẩu chưa fix giá trước.</p>
+        `
+      },
+      'note-fed': {
+        title: "Lưu Ý Tác Động Lãi Suất Fed",
+        icon: "fa-solid fa-building-columns text-cyan-accent",
+        content: `
+          <p>Nếu Fed giữ lãi suất cao lâu hơn và tiếp tục tăng trong tháng 3/2027, lợi suất đồng USD sẽ duy trì mức hấp dẫn, gây áp lực trực tiếp lên tỷ giá USD/VND và giới hạn dư địa giảm lãi suất điều hành trong nước.</p>
+          <p>Điều này ảnh hưởng bất lợi tới định giá cổ phiếu thị trường và doanh nghiệp sử dụng đòn bẩy tài chính cao.</p>
+        `
+      },
+      'note-capital': {
+        title: "Lưu Ý Dòng Vốn Quốc Tế",
+        icon: "fa-solid fa-globe text-emerald-accent",
+        content: `
+          <p>Khối ngoại bán ròng kéo dài tạo ra áp lực nguồn cung cổ phiếu trên sàn. Tuy nhiên, không đủ để kết luận thị trường chắc chắn giảm điểm nếu dòng tiền trong nước tiếp tục hấp thụ tốt.</p>
+          <p>Cần dõi đồng thời 3 chỉ báo: <strong>Tỷ giá USD/VND</strong>, <strong>Giao dịch khối ngoại</strong> và <strong>Thanh khoản dòng tiền nội</strong>.</p>
+        `
+      },
+      'note-ai': {
+        title: "Lưu Ý Phân Tích Bong Bóng AI",
+        icon: "fa-solid fa-microchip text-cyan-accent",
+        content: `
+          <p>Cần phân biệt rõ ràng giữa <strong>Chu kỳ ứng dụng AI dài hạn</strong> với <strong>Định giá cổ phiếu công nghệ ngắn hạn</strong>.</p>
+          <p>Nếu doanh thu các dịch vụ AI thực tế không theo kịp chi phí CapEx khổng lồ (730 tỷ USD), cổ phiếu công nghệ có thể chịu nhịp điều chính định giá lớn, ảnh hưởng tâm lý toàn cầu nhưng nhu cầu nền tảng không mất đi.</p>
+        `
+      },
+      'note-domestic-rate': {
+        title: "Lãi Suất Trong Nước & Doanh Nghiệp",
+        icon: "fa-solid fa-scale-balanced text-emerald-accent",
+        content: `
+          <p>Mặt bằng lãi suất khó giảm mạnh đồng đều do chênh lệch tín dụng/huy động và áp lực CPI. Lãi suất vay thực tế phụ thuộc vào xếp hạng tín nhiệm của từng ngân hàng.</p>
+          <p><strong>Bất lợi:</strong> Doanh nghiệp BĐS thương mại, doanh nghiệp vay nợ lớn.<br><strong>Lợi thế:</strong> Doanh nghiệp sở hữu tiền mặt ròng dồi dào, dòng tiền kinh doanh (CFO) dương vững chắc.</p>
+        `
+      },
+      'note-dtc': {
+        title: "Tiêu Chí Chọn Cổ Phiếu Đầu Tư Công",
+        icon: "fa-solid fa-helmet-safety text-gold-accent",
+        content: `
+          <p>Khi chọn doanh nghiệp xây dựng/vật liệu, không chỉ nhìn vào tổng giá trị hợp đồng ký kết (Backlog). Cần đánh giá kỹ các yếu tố:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Vị trí mỏ đá / nhà máy gần công trình</li>
+            <li>Tiến độ nghiệm thu và giải ngân thực tế</li>
+            <li>Chất lượng khoản phải thu & dòng tiền thu hồi nợ</li>
+          </ul>
+        `
+      }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-body').innerHTML = data.content;
+      document.getElementById('info-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('info-modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('info-modal')) {
+        closeModal();
+      }
+    });
+
+    // --- 4. Chart.js Implementation: Foreign Selling vs Margin ---
+    window.addEventListener('load', () => {
+      const ctx = document.getElementById('marginForeignChart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Q1/2021', 'Q4/2021', 'Q4/2022', 'Q4/2023', 'Q4/2024', 'Q2/2026', 'Q3/2026', 'T11/2026 (Est)'],
+          datasets: [
+            {
+              label: 'Dư Nợ Margin Thị Trường (Nghìn Tỷ)',
+              data: [110, 195, 140, 180, 230, 350, 457.5, 457.5],
+              borderColor: '#00E676',
+              backgroundColor: 'rgba(0, 230, 118, 0.1)',
+              fill: true,
+              tension: 0.3,
+              borderWidth: 3,
+              pointRadius: 4,
+              pointBackgroundColor: '#00E676'
+            },
+            {
+              label: 'Khối Ngoại Bán Ròng Lũy Kế (Nghìn Tỷ)',
+              data: [15, 60, 95, 145, 230, 350, 392, 393],
+              borderColor: '#FF5252',
+              backgroundColor: 'rgba(255, 82, 82, 0.05)',
+              borderDash: [5, 5],
+              fill: false,
+              tension: 0.3,
+              borderWidth: 2,
+              pointRadius: 4,
+              pointBackgroundColor: '#FF5252'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#94A3B8',
+                font: { family: 'Plus Jakarta Sans', size: 12 }
+              }
+            },
+            tooltip: {
+              backgroundColor: '#0B192C',
+              titleColor: '#00E5FF',
+              bodyColor: '#E2E8F0',
+              borderColor: '#1E2E45',
+              borderWidth: 1
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94A3B8', font: { family: 'Plus Jakarta Sans', size: 11 } }
+            },
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94A3B8', font: { family: 'Plus Jakarta Sans', size: 11 } }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
